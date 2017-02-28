@@ -644,7 +644,13 @@ li {
 	background-size: cover;
 	cursor: pointer;
 }
+.samples .sample:nth-child(odd){
+	background: #19802c;
+}
 
+.samples .sample:nth-child(even){
+	background: #728bff;
+}
 .samples .sample img {
 	height: auto;
 	max-width: 100%;

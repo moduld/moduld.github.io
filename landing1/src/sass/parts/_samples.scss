@@ -15,13 +15,13 @@
       max-width: 100%;
     }
   }
-  //.sample:nth-child(odd){
-  //  background-image: url("../../assets/img/111.jpg") ;
-  //}
-  //
-  //.sample:nth-child(even){
-  //  background-image: url("../../assets/img/333.jpg") ;
-  //}
+  .sample:nth-child(odd){
+    background: #19802c;
+  }
+
+  .sample:nth-child(even){
+    background: #728bff;
+  }
 //  .sample:hover{
 //    position: relative;
 //  }
