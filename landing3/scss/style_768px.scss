@@ -1,0 +1,196 @@
+.container {
+    max-width: 940px;
+}
+.header {
+    min-height: 700px;
+    width: 100%;
+    &__top {
+        padding-top: 39px;
+        text-align: right;
+        margin-right: 42px;
+    }
+    &__top_word {
+        text-align: left;
+        margin-top: -27px;
+        margin-left: 37px;
+    }
+    &__seconde {
+        font-size: 52px;
+        margin-top: 148px;
+        line-height: 63px;
+    }
+    &__third {
+        margin-top: 26px;
+        font-size: 24px;
+    }
+    &__red_butt {
+        width: 225px;
+        margin-top: 37px;
+    }
+}
+.section_one {
+    margin-top: 61px;
+    overflow: hidden;
+    font-size: 0;
+    &__wrapper_slider {
+        width: 33.3%;
+        display: inline-block;
+    }
+    &__slider {
+        height: 399px;
+        width: 230px;
+        margin-top: 36px;
+        overflow: hidden;
+    }
+    &__carousel_item {
+        height: 399px;
+    }
+    &__step {
+        top: 210px;
+        left: 10%;
+    }
+    &__title {
+        top: 245px;
+        left: 10%;
+
+    }
+    &__text {
+        top: 313px;
+        left: 10%;
+    }
+    &__slider_left {
+        top: 37px;
+        left: 10px;
+    }
+    &__slider_right {
+        top: 37px;
+        right: 10px;
+    }
+}
+.section_two {
+    margin-top: 97px;
+    &__people_wrapper {
+        width: 49.5%;
+        display: inline-block;
+    }
+    &__people {
+        width:67%;
+        display: inline-block;
+        margin-top: 17px;
+    }
+    &__people--one {
+        float: right;
+    }
+    &__people--two {
+        float: right;
+    }
+    &__people--three {
+        float: left;
+    }
+    &__people--four {
+        float: left;
+    }
+    &__sprite{
+        right: -1px;
+        top: 84px;
+    }
+    &__button {
+        margin-top: 46px;
+        width: 188px;
+    }
+
+}
+
+//-------------------------------------------------SECTION_THREE
+.section_three {
+    font-size: 0;
+    &__title {
+        margin-top: 98px;
+        margin-bottom: 25px;
+    }
+    &__picture {
+        margin: 10px 1.1%;
+        width: 31%;
+        height: 310px;
+    }
+    &__images {
+        height: 310px;
+    }
+    &__picture--fifth {
+        width: 64.3%;
+    }
+    &__picture--seventh {
+        width: 64.3%;
+    }
+    &__name {
+        margin-top: 144px;
+    }
+    &__discover {
+        margin-top: 86px;
+    }
+    &__interests {
+        margin-top: 33px;
+    }
+    &__input {
+        width: 205px;
+        display: inline-block;
+        margin-left: 22%;
+        margin-top: 40px;
+    }
+    &__button {
+        width: 160px;
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+//---------------------------------------------------------FOOTER
+.footer {
+    font-family: 'montserratbold';
+    min-height: 200px;
+    &__red_line {
+        margin-top: 100px;
+    }
+    &__top_word {
+        text-align: left;
+        margin-top: 38px;
+        margin-left: 27px;
+        width: 24.5%;
+        float: left;
+    }
+    &__company {
+        text-align: left;
+        margin-left: 44px;
+        width: 22.5%;
+        float: left;
+        margin-top: 39px;
+    }
+    &__menu {
+        text-align: left;
+        margin-top: 15px;
+        margin-left: -10px;
+    }
+    &__menu_items {
+        display: block;
+        margin: 10px 10px;
+    }
+    &__menu_link {
+        color: #666666;
+        text-decoration: none;
+    }
+    &__partner {
+        text-align: left;
+        margin-top: 39px;
+        width: 18.5%;
+        float: left;
+    }
+    &__designed {
+        margin-top: 39px;
+        width: 24.5%;
+        float: left;
+    }
+    &__logo {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+    }
+}

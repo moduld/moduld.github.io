@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/css/reset.css">
+    <link rel="stylesheet" href="lib/css/animate.css">
+    <link rel="stylesheet" href="prod/css/style_320px.css">
+    <link rel="stylesheet" media="(min-width: 768px)" href="prod/css/style_768px.css">
+    <link rel="stylesheet" media="(min-width: 940px)" href="prod/css/style_940px.css">
+    <script type="text/javascript" src="lib/js/jquery-2.2.2.js"></script>
+    <script type="text/javascript" src="lib/js/masonry.js"></script>
+    <script type="text/javascript" src="lib/js/carousel.js"></script>
+    <script type="text/javascript" src="lib/js/jquery.template.js"></script>
+    <script type="text/javascript" src="lib/js/vpchecker.js"></script>
+    <script type="text/javascript" src="prod/js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+           <div class="header__top_wrapper">
+                <div class="header__top">
+                    <div class="header__login">Log in</div>
+                    <div class="header__signup">Sign up</div>
+                </div>
+                <h2 class="header__top_word">URLAUBSGLÜCK</h2>
+            </div>
+            <h1 class="header__seconde">Share your <br> holiday dreams</h1>
+            <h3 class="header__third">And find the perfect partner to fullfill it</h3>
+            <div class="header__red_butt"><a href="#seconde_sect" class="header__red_link">Find your holiday partner</a></div>
+        </header>
+        
+        <section class="section_one checker">
+            <script type="text/html" id="carousel_html">
+                <% for ( var i = 0; i < sourses.length; i++ ) { %>
+                    <li class="section_one__carousel_item"></li> 
+                <% }; %>
+            </script>
+            <h2 class="section_one__how">How Urlaubsglück works?</h2>
+            <div class="section_one__wrapper_slider">
+                <div class="section_one__slider section_one__slider--1">
+                    <div class="section_one__carousel_wrap">
+                        <ul class="section_one__carousel">
+
+                        </ul>
+                    </div>
+                    <span class="section_one__slider_left"></span>
+                    <span class="section_one__slider_right"></span>
+                    <div class="section_one__step">step 1</div>
+                    <h3 class="section_one__title">Sed leo enim, condimentum</h3>
+                    <p class="section_one__text">Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                </div> 
+            </div>
+            <div class="section_one__wrapper_slider">
+                <div class="section_one__slider section_one__slider--2">
+                        <div class="section_one__carousel_wrap">
+                            <ul class="section_one__carousel">
+
+                            </ul>
+                        </div>
+                        <span class="section_one__slider_left"></span>
+                        <span class="section_one__slider_right"></span>
+                    <div class="section_one__step">Step 2</div>
+                    <h3 class="section_one__title">Morbi velit risus</h3>
+                    <p class="section_one__text">Nulla venenatis tempor dui in molestie. Nulla quis dictum purus</p>
+                </div>
+            </div>
+            <div class="section_one__wrapper_slider">
+                <div class="section_one__slider section_one__slider--3">
+                    <div class="section_one__carousel_wrap">
+                        <ul class="section_one__carousel">
+
+                        </ul>
+                    </div>
+                    <span class="section_one__slider_left"></span>
+                    <span class="section_one__slider_right"></span>
+                    <div class="section_one__step">Step 3</div>
+                    <h3 class="section_one__title">Sed leo enim, condimentum</h3>
+                    <p class="section_one__text">Quisque libero libero, dictum non turpis in, luctus semper lore</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section_two checker" id="seconde_sect">
+            <h2 class="section_two__meet">Meet a partner for your best holiday</h2>
+            <div class="section_two__people_wrapper">
+                <div class="section_two__people section_two__people--one">
+                    <div class="section_two__image">
+                        <img src="" alt="" class="section_two__image_item">
+                        <div class="section_two__sprite section_two__sprite--1"></div>
+                    </div>
+                    <p class="section_two__name"></p>
+                    <p class="section_two__about"></p>
+                </div>
+                <div class="section_two__people section_two__people--two">
+                    <div class="section_two__image">
+                        <img src="" alt="" class="section_two__image_item">
+                        <div class="section_two__sprite section_two__sprite--2"></div>
+                    </div>
+                    <p class="section_two__name"></p>
+                    <p class="section_two__about"></p>
+                </div>
+            </div>
+            <div class="section_two__people_wrapper">
+                <div class="section_two__people section_two__people--three">
+                    <div class="section_two__image">
+                        <img src="" alt="" class="section_two__image_item">
+                        <div class="section_two__sprite section_two__sprite--3"></div>
+                    </div>
+                    <p class="section_two__name"></p>
+                    <p class="section_two__about"></p>
+                </div>
+                <div class="section_two__people section_two__people--four">
+                    <div class="section_two__image">
+                        <img src="" alt="" class="section_two__image_item">
+                        <div class="section_two__sprite section_two__sprite--4"></div>
+                    </div>
+                    <p class="section_two__name"></p>
+                    <p class="section_two__about"></p>
+                </div>
+            </div>
+            <div class="section_two__button">See other partners</div>
+        </section>
+        <section class="section_three checker">
+            <h2 class="section_three__title">Discover holiday activity ideas</h2>
+            <div class="section_three__masonry_grid">
+                <div class="section_three__picture">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_three__picture">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_three__picture">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_three__picture">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_three__picture section_three__picture--fifth">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_three__picture section_three__picture--seventh">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_three__picture">
+                    <div class="section_three__wrapper">
+                        <div class="section_three__name_wrap">
+                            <p class="section_three__name">Sport and Activity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section_three__discover">Discover holiday activity ideas</h2>
+            <p class="section_three__interests">Hi! What are your holiday interests?</p>
+            <form action="#">
+                <input type="text" placeholder="Enter your interests" class="section_three__input">
+                <button type="button" class="section_three__button">Search partners</button>
+            </form>
+        </section>
+        <div class="footer__red_line"></div>
+        <footer class="footer checker">
+            <h2 class="footer__top_word">URLAUBSGLÜCK</h2>
+            <div class="footer__company">Company
+                <ul class="footer__menu">
+                    <li class="footer__menu_items"><a href="#" class="footer__menu_link">About</a></li>
+                    <li class="footer__menu_items"><a href="#" class="footer__menu_link">Contacts</a></li>
+                    <li class="footer__menu_items"><a href="#" class="footer__menu_link">Press</a></li>
+                    <li class="footer__menu_items"><a href="#" class="footer__menu_link">Blog</a></li>
+                </ul>
+            
+            </div>
+            <p class="footer__partner">Partners</p>
+            <p class="footer__designed">Designed by
+                <a href="#" class="footer__logo"><img src="img/areto.png" alt="areto" class="footer__logo_img"></a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

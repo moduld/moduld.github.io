@@ -1,0 +1,118 @@
+.container {
+    max-width: 100%;
+}
+.header {
+    min-height: 700px;
+    &__top {
+        margin-right: 0;
+    }
+    &__top_wrapper {
+        max-width: 940px;
+        margin: auto;
+    }
+    &__top_word {
+        margin-left: 0;
+    }
+}
+.section_one {
+    max-width: 940px;
+    margin: auto;
+    margin-top: 61px;
+    &__slider {
+        width: 292px;
+    }
+    &__step {
+        top: 228px;
+        left: 9%;
+    }
+    &__title {
+        top: 262px;
+        left: 9%;
+    }
+    &__text {
+        top: 331px;
+        left: 9%;
+    }
+    &__slider_left {
+        top: 150px;
+        left: 10px;
+    }
+    &__slider_right {
+        top: 150px;
+        right: 10px;
+    }
+}
+.section_two {
+    max-width: 940px;
+    margin: auto;
+    margin-top: 97px;
+    &__people {
+        width:49.5%;
+        margin: auto;
+        margin-top: 17px;
+    }
+}
+
+//-------------------------------------------------SECTION_THREE
+.section_three {
+    max-width: 940px;
+    margin: auto;
+    margin-top: 35px;
+    &__picture--fifth {
+        width: 64.3%;
+    }
+    &__picture--seventh {
+        width: 64.3%;
+    }
+    &__name_wrap {
+        padding: 0;
+    }
+    &__wrapper {
+        padding: 0;
+    }
+    &__name {
+        margin-top: 141px;
+    }
+    &__input {
+        width: 203px;
+        margin-left: 28%;
+    }
+}
+//---------------------------------------------------------FOOTER
+.footer {
+    max-width: 940px;
+    margin: auto;
+    overflow: hidden;
+    &__top_word {
+        margin-left: 0;
+    }
+    &__company {
+        margin-left: 10px;
+        width: 16.5%;
+    }
+    &__menu {
+        text-align: left;
+        margin-top: 15px;
+        margin-left: -10px;
+    }
+    &__menu_items {
+        display: block;
+        margin: 10px 10px;
+    }
+    &__menu_link {
+        color: #666666;
+        text-decoration: none;
+    }
+    &__partner {
+        margin-left: 5px;
+    }
+    &__designed {
+        width: 11.5%;
+        float: right;
+    }
+    &__logo {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+    }
+}
