@@ -1,0 +1,75 @@
+
+.tab_body{
+  @extend .flex_column;
+  width: 28em;
+  height: 30em;
+  padding: 0.5em;
+  border: 1px solid $default;
+  margin: 1em;
+  cursor: pointer;
+  border-radius: 0.3em;
+  .text,
+  .title{
+    padding: 0.5em 0.8em;
+    background: white;
+    border-radius: 0.2em;
+    width: 100%;
+    max-height: 6em;
+    overflow-y: auto;
+  }
+  .title{
+    text-align: center;
+  }
+  .text{
+    margin-top: 0.5em;
+  }
+  .tags_wrapp{
+    @extend .flex_default;
+    margin-top: 0.5em;
+    flex: 1;
+  }
+  .category_wrapp,
+  .labels_wrapp{
+    width: 50%;
+    @extend .flex_column;
+    background: white;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    overflow-y: auto;
+  }
+  .category_wrapp{
+    margin-right: 0.25em;
+  }
+  .labels_wrapp{
+    margin-left: 0.25em;
+  }
+
+  .main_tag{
+    margin-top: 1em;
+
+    &:first-child{
+      margin-top: 0;
+    }
+
+  }
+  .tag_name{
+    @extend .flex_line;
+    &:before{
+      color: $blue;
+      display: block;
+      margin-right: 0.5em;
+    }
+  }
+  .sub_tag{
+    @extend .flex_line;
+    margin-left: 1.5em;
+    font-size: 0.8em;
+    &:before{
+      font-size: 0.5em;
+      display: block;
+      margin-right: 1em;
+      color: $blue;
+    }
+  }
+
+}

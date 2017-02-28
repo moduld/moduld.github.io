@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="app/lib/angular.min.js" defer></script>
+    <script src="app/lib/ui-router.js" defer></script>
+    <script src="app/app.js" defer></script>
+    <script src="app/config/config.js" defer></script>
+    <script src="app/components/main_view.component.js" defer></script>
+    <script src="app/components/notice_handle.component.js" defer></script>
+    <script src="app/services/data_store.js" defer></script>
+    <script src="app/filters/mainViewFilter.js" defer></script>
+    <script src="app/directives/closeDropBox.js" defer></script>
+    <title>Tabs</title>
+</head>
+<body ng-app="app" close-drops>
+    <ui-view class="full_height"></ui-view>
+</body>
+</html>

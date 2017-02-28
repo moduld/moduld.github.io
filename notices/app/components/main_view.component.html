@@ -1,0 +1,79 @@
+<nav class="nav_bar">
+    <div class="main_wrapper">
+        <span class="new_notice hover_button">
+            <span class="text" ui-sref="new-notice">Новая заметка</span>
+        </span>
+        <div class="filter_wrapp">
+            <span class="title">Фильтровать:</span>
+
+            <div class="drop_container icon-down">
+                <input type="checkbox" id="by_categiry" class="toggle_input">
+                <label for="by_categiry" class="filter_name">По категориям</label>
+                <div class="drop_body">
+
+                    <div class="check_string" ng-repeat="category in $ctrl.allCategories track by $index">
+                        <input type="checkbox" id="category_{{$index}}" class="string_toggle" ng-model="filtering.categories"
+                               ng-change="$ctrl.fillCategoriesData(category.category_name, filtering.categories)">
+                        <label for="category_{{$index}}" class="string">{{category.category_name}}</label>
+                        <div class="subcategories">
+                            <div class="check_string" ng-repeat="subcategory in category.subcategory track by $index">
+                                <input type="checkbox" id="{{category.category_name}}_subcategory_{{$index}}"
+                                       class="string_toggle" ng-model="subcat.state"
+                                       ng-change="$ctrl.fillCategoriesData(category.category_name, subcat.state, subcategory)"
+                                       ng-checked="$ctrl.isChecked(category.category_name, subcategory, subcat)">
+                                <label for="{{category.category_name}}_subcategory_{{$index}}" class="string">{{subcategory}}</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                <div class="drop_container icon-down">
+                    <input type="checkbox" id="by_labeles" class="toggle_input">
+                    <label for="by_labeles" class="filter_name">По ярлыкам</label>
+                    <div class="drop_body">
+                        <div class="check_string" ng-repeat="label in $ctrl.allLabels track by $index">
+                            <input type="checkbox" id="label_{{$index}}" class="string_toggle" ng-model="filtering.label"
+                                   ng-change="$ctrl.fillFilterData('labels', filtering, label)">
+                            <label for="label_{{$index}}" class="string">{{label}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="drop_container icon-down">
+                    <input type="checkbox" id="by_color" class="toggle_input">
+                    <label for="by_color" class="filter_name">По цвету</label>
+                    <div class="drop_body">
+                        <div class="check_string flex_between" ng-repeat="color in $ctrl.allColors track by $index">
+                            <input type="checkbox" id="color_{{$index}}" class="string_toggle" ng-model="filtering.color"
+                                   ng-change="$ctrl.fillFilterData('background', filtering, color)">
+                            <label for="color_{{$index}}" class="string">{{color}}</label>
+                            <span class="color_sample" ng-class="color"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</nav>
+
+<div class="main_wrapper tab_view">
+    <div class="tab_body" ng-repeat="tab in $ctrl.tabs | mainView track by $index " ng-class="tab.background"
+         ui-sref="details({id: tab.id})">
+        <h2 class="title" ng-bind="tab.title"></h2>
+        <p class="text" ng-bind="tab.text"></p>
+        <div class="tags_wrapp">
+            <div class="category_wrapp">
+                <div class="main_tag" ng-repeat="category in tab.categories track by $index">
+                    <span class="tag_name icon-right">{{category.category_name}}</span>
+                    <p class="sub_tag icon-right" ng-repeat="subcategory in category.subcategory track by $index">
+                        {{subcategory}}
+                    </p>
+                </div>
+            </div>
+            <div class="labels_wrapp">
+                <p class="main_tag" ng-repeat="label in tab.labels track by $index">
+                    <span class="tag_name icon-right">{{label}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

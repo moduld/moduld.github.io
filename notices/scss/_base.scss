@@ -1,0 +1,221 @@
+.flex_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_column{
+  display: flex;
+  flex-direction: column;
+}
+.flex_between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex_around{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex_default{
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+}
+.flex_line{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+  @extend .flex_column;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+.main_wrapper{
+  width: 100%;
+  max-width: 90em;
+  margin: 0 auto;
+  @extend .flex_between;
+}
+.full_height{
+  flex: 1;
+  @extend .flex_column;
+}
+
+.drop_container{
+  position: relative;
+  cursor: pointer;
+  @extend .flex_center;
+  justify-content: flex-start;
+  &:before{
+    color: $blue;
+  }
+}
+
+.drop_body{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 20em;
+  overflow-y: auto;
+  padding: 0.5em;
+  background: white;
+  display: none;
+  background: linear-gradient(to top, $green, white, $green);
+  cursor: default;
+  z-index: 1;
+}
+.toggle_input{
+  display: none;
+  &:checked ~ .drop_body{
+    display: block;
+  }
+}
+.string_toggle{
+  display: none;
+  &:checked + .string{
+    &:before{
+      height: 0.3em;
+      width: 0.3em;
+      background: black;
+      border: 0.2em solid $blue;
+
+    }
+  }
+  &:checked ~ .subcategories{
+    display: block;
+  }
+}
+.subcategories{
+  display: none;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-left: 1em;
+  .string{
+    font-size: 0.6em;
+  }
+}
+.string{
+  display: block;
+  padding: 0.8em 0;
+  cursor: pointer;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  transition: 0.5s;
+  &:hover{
+    font-weight: bold;
+  }
+  &:before{
+    content: '';
+    height: 0.5em;
+    width: 0.5em;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid black;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+}
+
+.hover_button{
+  background: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  &:hover{
+    color: white;
+  }
+  &:hover:after{
+    box-shadow: 0 0 1em 10em $green;
+  }
+  .text{
+    transition: 0.5s;
+    z-index: 1;
+  }
+  &:hover > .text{
+    color: white;
+  }
+}
+
+
+.filter_name{
+  font-size: 1.2em;
+  padding: 0.8em 2.5em 0.8em 1em;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+}
+
+.default{
+  background: $default;
+   .drop_body{
+    background: linear-gradient(to top, $default, white, $default);
+  }
+}
+.red{
+  background: $red;
+  .drop_body{
+    background: linear-gradient(to top, $red, white, $red);
+  }
+}
+.blue{
+  background: $blue;
+  .drop_body{
+    background: linear-gradient(to top, $blue, white, $blue);
+  }
+}
+.green{
+  background: $green;
+}
+.yellow{
+  background: $yellow;
+  .drop_body{
+    background: linear-gradient(to top, $yellow, white, $yellow);
+  }
+}
+.violet{
+  background: $violet;
+  .drop_body{
+    background: linear-gradient(to top, $violet, white, $violet);
+  }
+
+}
+.brown{
+  background: $brown;
+  .drop_body{
+    background: linear-gradient(to top, $brown, white, $brown);
+  }
+}
+.buttons{
+  @extend .flex_around;
+  margin-top: auto;
+  .button{
+    padding: 0.8em 1.5em;
+  }
+}
+
+
+

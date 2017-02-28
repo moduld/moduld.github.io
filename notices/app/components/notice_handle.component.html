@@ -1,0 +1,124 @@
+<nav class="nav_bar" >
+    <div class="main_wrapper">
+
+
+            <div class="drop_container icon-down">
+                <input type="checkbox" id="by_categiry" class="toggle_input">
+                <label for="by_categiry" class="filter_name">Редактировать категории</label>
+                <div class="drop_body">
+                    <div class="input_field_wrapp">
+                        <input type="text" class="input_field" placeholder="Новая категория" ng-model="newCategory.name">
+                        <span class="button_add icon-save" ng-click="$ctrl.addNewCategory(newCategory)"></span>
+                    </div>
+
+                    <div class="check_string flex_column" ng-repeat="category in $ctrl.allCategories track by $index">
+                        <div class="check_string_wrapp">
+                            <span class="cat_name">{{category.category_name}}</span>
+                            <span class="button_add icon-bin" ng-click="$ctrl.deleteCategory($index)"></span>
+                        </div>
+
+                        <label class="subcat_open" for="{{category.category_name}}">Подкатегории</label>
+                        <input type="checkbox" class="string_toggle" id="{{category.category_name}}">
+
+                        <div class="subcategories">
+                            <div class="input_field_wrapp">
+                                <input type="text" class="input_field" ng-model="category.newCategory"  placeholder="Новая подкатегория">
+                                <span class="button_add icon-save" ng-click="$ctrl.addSubCategory(category)"></span>
+                            </div>
+                            <div class="check_string" ng-repeat="subcategory in category.subcategory track by $index">
+                                 <span class="cubcat_name">{{subcategory}}</span>
+                                <span class="button_add icon-bin" ng-click="$ctrl.deleteSubcategory($index, category.subcategory)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="drop_container icon-down">
+                <input type="checkbox" id="by_labeles" class="toggle_input">
+                <label for="by_labeles" class="filter_name">Редактировать ярлыки</label>
+                <div class="drop_body">
+                    <div class="input_field_wrapp">
+                        <input type="text" class="input_field" placeholder="Новый ярлык" ng-model="newLabel.name">
+                        <span class="button_add icon-save" ng-click="$ctrl.addLabel(newLabel)"></span>
+                    </div>
+
+                    <div class="check_string_wrapp" ng-repeat="label in $ctrl.allLabels track by $index">
+                        <span class="cat_name">{{label}}</span>
+                        <span class="button_add icon-bin" ng-click="$ctrl.deleteLAbel($index)"></span>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</nav>
+
+<div class="main_wrapper full_height" >
+    <div class="new_tab" ng-class="$ctrl.theTab.background">
+        <input type="text" class="new_title" placeholder="Заголовок..." ng-model="$ctrl.theTab.title">
+        <textarea class="text_field" placeholder="Текст..." ng-model="$ctrl.theTab.text"></textarea>
+        <div class="settings">
+            <div class="drop_container icon-down">
+                <input type="checkbox" id="by_category_in_tab" class="toggle_input">
+                <label for="by_category_in_tab" class="filter_name">Выбор категории</label>
+                <div class="drop_body">
+
+                    <div class="check_string" ng-repeat="category in $ctrl.allCategories track by $index" ng-init="cat_action_flag = $ctrl.isChecked('category', category.category_name)">
+                        <input type="checkbox" id="category_{{$index}}" class="string_toggle" ng-value="category.category_name"
+                               ng-model="cat_action_flag" ng-change="$ctrl.addTabCategory(category.category_name, cat_action_flag)">
+                        <label for="category_{{$index}}" class="string">{{category.category_name}}</label>
+                        <div class="subcategories">
+                            <div class="check_string" ng-repeat="subcategory in category.subcategory track by $index" ng-init="subcat_action_flag = cat_action_flag ? $ctrl.isChecked('subcat', subcategory, category.category_name) : false">
+                                <input type="checkbox" id="{{category.category_name}}_subcategory_{{$index}}"
+                                       class="string_toggle" ng-value="subcategory" ng-model="subcat_action_flag" ng-change="$ctrl.addTabSubcategory(category, $index, subcat_action_flag)">
+                                <label for="{{category.category_name}}_subcategory_{{$index}}" class="string">{{subcategory}}</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="drop_container icon-down">
+                <input type="checkbox" id="by_labeles_in_tab" class="toggle_input">
+                <label for="by_labeles_in_tab" class="filter_name">Выбор ярлыка</label>
+                <div class="drop_body">
+                    <div class="check_string" ng-repeat="label in $ctrl.allLabels track by $index" ng-init="label_action = $ctrl.isChecked('label', label)">
+                        <input type="checkbox" id="label_{{$index}}" class="string_toggle" ng-value="label"
+                               ng-model="label_action" ng-change="$ctrl.addTabLabel(label, label_action)">
+                        <label for="label_{{$index}}" class="string">{{label}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="drop_container icon-down">
+                <input type="checkbox" id="by_color" class="toggle_input">
+                <label for="by_color" class="filter_name">Выбор цвета</label>
+                <div class="drop_body">
+                    <div class="check_string flex_between" ng-repeat="color in $ctrl.allColors track by $index">
+                        <input type="radio" name="new_ticket_color" id="color_{{$index}}" class="string_toggle"
+                                 ng-model="$ctrl.theTab.background"  ng-value="color">
+                        <label for="color_{{$index}}" class="string">{{color}}</label>
+                        <span class="color_sample" ng-class="color"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="button hover_button" ui-sref="main">
+               <span class="text">Отмена</span>
+            </button>
+            <button class="button hover_button" ng-click="$ctrl.saveTab()" >
+                <span class="text">{{$ctrl.buttonText}}</span>
+
+            </button>
+            <button class="button hover_button" ng-click="$ctrl.deleteTab()" ng-if="$ctrl.usedTab">
+                <span class="text">Удалить</span>
+
+            </button>
+        </div>
+    </div>
+</div>

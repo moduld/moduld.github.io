@@ -1,0 +1,12 @@
+main-view{
+  @extend .full_height;
+  .main_wrapper{
+    flex: 0;
+    flex-wrap: wrap;
+  }
+  .tab_view{
+    @extend .flex_default;
+    justify-content: space-around;
+
+  }
+}
